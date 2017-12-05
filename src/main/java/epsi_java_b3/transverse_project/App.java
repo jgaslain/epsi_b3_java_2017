@@ -13,6 +13,8 @@ public class App
 =======
         System.out.println( "Hello World!" );
         System.out.println("erwan");
+        System.out.println("Damien");
+
 >>>>>>> branch 'master' of https://github.com/jgaslain/epsi_b3_java_2017.git
     }
 }
