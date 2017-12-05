@@ -1,0 +1,19 @@
+
+----------------------------
+GIT
+----------------------------
+
+2 nouvelles branches
+
+branche_mecgs : Ludovic, Soumaila, Guillaume, etc.
+
+branche_tacos : les autres!
+
+
+Récupérer nouvelles branches :
+git fetch
+
+Basculer sur sa branche : 
+git checkout branche_mecgs
+
+
