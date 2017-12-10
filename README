@@ -13,8 +13,14 @@ branche_tacos : les autres!
 Récupérer nouvelles branches :
 git fetch
 
+Liste les branches distantes :
+git branch -r
+
 Basculer sur sa branche : 
 git checkout branche_mecgs
+
+Rebasculer sur branche principale :
+git checkout master
 
 
 ----------------------------
@@ -30,4 +36,6 @@ Vérifier que dans le build path du projet,
 le JRE utilisé est bien celui contenu dans le JDK.
 
 
++ ajouter au build path du projet la librairie lib/client-copeeks.jar
+(Project -> Properties -> Build path -> Add library...
 
