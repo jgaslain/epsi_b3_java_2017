@@ -22,7 +22,6 @@ public class ExempleApiClient {
 			
 			for (SensorValue value : sensorValueList.getResults()) {
 				System.out.println(value.toString());
-				
 			}
 			// Attention : 
 			//  - certaines données ne sont viables que pour un seul des 2 boitiers.
