@@ -9,9 +9,5 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello World!!!" );
-        System.out.println("erwan");
-        System.out.println("Damien");
-        System.out.println("Matthieu_M");
-        System.out.println("Damien !");
     }
 }

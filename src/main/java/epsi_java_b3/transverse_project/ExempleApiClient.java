@@ -8,7 +8,6 @@ import io.swagger.client.model.SensorValuesList;
 public class ExempleApiClient {
 
 	public static void main(String[] args) {
-		
 		try {
 			
 			// getSensorGraph(extrapolationFactor, boxName, reportType, sensorType)
@@ -17,12 +16,14 @@ public class ExempleApiClient {
 			// 		reportType : période sur laquelle récupérer les données (hour, day, week, month), conserver "month"
 			// 		sensorType : "temperature", "pression", "humidite"
 			
-			SensorValuesList sensorValueList = new SensorsApi(CopeeksClient.get()).getSensorGraph("1", "PEEK_BREHOU_2", "week", "humidite");
+			SensorValuesList sensorValueList = new SensorsApi(CopeeksClient.get()).getSensorGraph("1", "PEEK_BREHOU_2", "week", "temperature");
+			
+			int temperatue;
 			
 			for (SensorValue value : sensorValueList.getResults()) {
 				System.out.println(value.toString());
+				
 			}
-			
 			// Attention : 
 			//  - certaines données ne sont viables que pour un seul des 2 boitiers.
 			//  - les données renvoyées ne sont pas triées par date 
