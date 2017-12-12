@@ -13,6 +13,6 @@ public class App
         System.out.println("Damien");
         System.out.println("Matthieu_M");
         System.out.println("Damien !");
-        System.out.println("Andy !");
+        System.out.println("Andy ");
     }
 }
