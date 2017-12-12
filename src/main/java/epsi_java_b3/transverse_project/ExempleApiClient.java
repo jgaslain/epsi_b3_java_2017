@@ -16,16 +16,40 @@ public class ExempleApiClient {
 			// 		reportType : période sur laquelle récupérer les données (hour, day, week, month), conserver "month"
 			// 		sensorType : "temperature", "pression", "humidite"
 			
+			
+			java.text.DecimalFormat df = new java.text.DecimalFormat("0.##");
+
 			SensorValuesList sensorValueList = new SensorsApi(CopeeksClient.get()).getSensorGraph("1", "PEEK_BREHOU_2", "week", "temperature");
 			
-			int temperatue; 
+			double temperature = 0;
+			double compteur = 0;
+			String nomBoitier = sensorValueList.getBoxName();
 			
 			for (SensorValue value : sensorValueList.getResults()) {
-				System.out.println(value.toString());
+				System.out.println(value.toString()); 
+				temperature = temperature + value.getValue().doubleValue();
+				compteur = compteur + 1;
 			}
+			System.out.println("La moyenne des températures pour le boitier : " + nomBoitier + " est de : " + df.format(temperature / compteur));
 			// Attention : 
 			//  - certaines données ne sont viables que pour un seul des 2 boitiers.
 			//  - les données renvoyées ne sont pas triées par date 
+			
+			double temperatureMax = 0;
+			for (SensorValue value : sensorValueList.getResults()) {
+				if (temperatureMax < value.getValue().doubleValue()){
+					temperatureMax = value.getValue().doubleValue();
+				}
+			}
+			System.out.println(temperatureMax);
+			
+			double temperatureMin = 999;
+			for (SensorValue value : sensorValueList.getResults()) {
+				if (temperatureMin > value.getValue().intValue()){
+					temperatureMin = value.getValue().intValue();
+				}
+			}
+			System.out.println(temperatureMin);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
