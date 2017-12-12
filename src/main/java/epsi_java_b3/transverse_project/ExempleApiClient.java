@@ -18,7 +18,7 @@ public class ExempleApiClient {
 			
 			SensorValuesList sensorValueList = new SensorsApi(CopeeksClient.get()).getSensorGraph("1", "PEEK_BREHOU_2", "week", "temperature");
 			
-			int temperatue; //ok
+			int temperatue; 
 			
 			for (SensorValue value : sensorValueList.getResults()) {
 				System.out.println(value.toString());
